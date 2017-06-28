@@ -1,0 +1,399 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>[!--pagetitle--]</title>
+
+<script src="http://siteapp.baidu.com/static/webappservice/uaredirect.js" type="text/javascript"></script>
+<script type="text/javascript">uaredirect("http://ceshi5.xingsukeji.com/m/","http://ceshi5.xingsukeji.com/");</script>
+
+<meta name="keywords" content=" [!--pagekey--] " />
+<meta name="description" content=" [!--pagedes--]" />
+<link rel="stylesheet" href="/52img/css/main.css" type="text/css" />
+<link rel="stylesheet" href="/52img/css/newindex.css" type="text/css" />
+<link href="/e/extend/qd/images/qd.css" rel="stylesheet" type="text/css" />
+<!--[if lt IE 9]>
+<script src="/52img/js/html5.js"></script>
+<link rel="stylesheet" href="/52img/css/iehack.css" type="text/css" />
+<![endif]-->
+<link rel="stylesheet" href="/52img/css/iconmoon.css" type="text/css" />
+<!--[if IE 7]>
+<style type=”text/css”>
+.blFormBox .wantItem{position: initial;}
+</style>
+<![endif]-->
+<script type="text/javascript" src="/52img/js/jquery.min.js"></script>
+<script type="text/javascript" src="/52img/js/slick.js"></script>
+<script type="text/javascript" src="/52img/js/layer.js"></script>
+<script type="text/javascript" src="/52img/js/yecha.js"></script>
+<script type="text/javascript" src="/e/extend/qd/js/qd.js"></script>
+<script type="text/javascript" src="/e/extend/load/load.js"></script>
+[!--temp.tz--]
+</head>
+<body>
+<header class="indexHead">
+  <div class="headerWrap">
+    <div class="logo_search">
+      <h1 class="logo" style="width:326px;position:relative;" id="logo-flash" > <a href="/"><img src="/52img/pic/logo.png" alt="<?=$public_r[sitename]?>" /></a> </h1>
+      <form class="form_search" action="/e/search/index.php" id="searchform" method="post">
+      	<input type="hidden" name="show" value="title,newstext">
+        <button type="submit" class="btn_search icon-search"><!--[if lt IE 8]>Go<![endif]--></button>
+        <input id="s" name="keyboard" type="search" class="text_search" value="旅游关键字" onblur="if(this.value=='') {this.value='旅游关键字';this.style.color='#999';}" onfocus="if(this.value=='旅游关键字') {this.value='';this.style.color='#333';}">
+      </form>
+      <div class="loginArea">
+        <div class="submission"> <a href="#">爆料投稿</a> <i></i>
+          <div class="more_submissionWrap">
+            <ul class="more_submission">
+              <span></span>
+              <li><a href="/e/DoInfo/ListInfo.php?mid=9" target="_blank">优惠爆料</a></li>
+              <li><a href="/e/DoInfo/ListInfo.php?mid=11" target="_blank" >原创投稿</a></li>
+            </ul>
+          </div>
+        </div>
+        <script src="/e/member/login/loginjs.php"></script>
+      </div>
+    </div>
+  </div>
+  <!--navBarWrap--> 
+  <!--navBar-->
+  <div class="navBarWrap oHeight">
+    <div class="navBar oHeight">
+      <nav class="oHeight"> <a href="/" class="active">首页</a> <a href="/category/">优惠</a> <a href="/shaidan/" > 晒单</a> <a href="/faxian/">发现</a> <a href="/mall/">商家</a> <a href="/news/">资讯</a>
+        <div class="moreNav"> <a href="#">更多</a> <i></i>
+          <ul class="more_moreNav" aria-haspopup="true">
+            <span></span>
+            <li><a href="/e/member/gshop/">积分兑换</a></li>
+            <li><a href="/mall/">商家导航</a></li>
+          </ul>
+        </div>
+      </nav>
+      <!-- share_app_icon-->
+      <div class="share_app_icon">
+        <div class="sina share_box"> <a href="<?=$public_r['add_sina']?>" target="_blank"><i class="icon-weibo-noframe"><!--[if lt IE 8]>新浪微博<![endif]--></i></a>
+          <div class="more_share" style="display:none;"><span><em></em></span>关注<?=$public_r['webname']?>微博</div>
+        </div>
+        <div class="weixin share_box"> <a href="javascript:void(0);"><i class="icon-weixinwukuang"><!--[if lt IE 8]>微信<![endif]--></i></a>
+          <div class="more_share" style=""><span><em></em></span><img src="/52img/pic/weixin1.jpg" alt="微信" />
+            <p>微信号：<?=$public_r['weixin']?></p>
+          </div>
+        </div>
+        <div class="rss share_box"> <a href="/e/web/?type=rss2&classid=0" target="_blank"><i class="icon-newrss"><!--[if lt IE 8]>RSS<![endif]--></i></a>
+          <div class="more_share" style="display:none;"><span><em></em></span>Rss 订阅中心</div>
+        </div>
+        <div class="downloadApp share_box"> <a href="#" target="_blank" class="app"><i class="icon-app"></i>App 下载 <span>&gt;</span></a>
+          <div class="more_share" style=""><span><em></em></span><img src="/52img/pic/app.png" alt="" />
+            <p>扫码下载 App</p>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- section -->
+<section class="wrap"> 
+  <!-- leftWrap-->
+  <div class="leftWrap"> 
+    <!-- leftWrapTop -->
+    <div class="leftWrapTop"> 
+      <!-- big banner -->
+      <div class="slider single-item">
+[e:loop={227,5,0,1}]
+        <div><a href="<?=$bqsr[titleurl]?>" target="_blank"><img src="<?=$bqr[titlepic]?>" alt="<?=$bqr[title]?>" /></a></div>
+[/e:loop]
+      </div>
+      <!-- big banner end--> 
+      <!-- small banner -->
+      <div class="img_list rFloat">
+[e:loop={228,3,0,0}]
+        <div><a href="<?=$bqsr[titleurl]?>" target="_blank"><img src="<?=$bqr[titlepic]?>" alt="<?=$bqr[title]?>" /></a></div>
+[/e:loop]
+      </div>
+      <!-- small banner end--> 
+      
+      <!-- category --> 
+      <!-- classify end -->
+      <div class="clear"></div>
+    </div>
+    <!-- leftWrapTop end--> 
+    
+    <!-- preferential -->
+<!--
+    <div class="preferential">
+      <div class="hotPreTitle">热门活动</div>
+      <ul class="hotPre">
+[e:loop={229,8,0,0}]
+        <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>" class="new"><?=$bqr[title]?></a></li>
+[/e:loop]
+      </ul>
+    </div>
+    <div> 
+    </div>
+-->
+    <!-- preferential end --> 
+    
+    <!-- list -->
+    <div id="indexlist">
+[e:loop={2,20,0,1}]
+<?
+	$tags="";
+	$s=$empire->fetch1("select infotags from {$dbtbpre}ecms_youhui_data_1 where id='$bqr[id]'");
+    if($s[infotags]){
+    	$infoarr=explode(',',$s[infotags]);
+        for($i=0;$i<count($infoarr);$i++){
+        	$tags.='<a href="/e/tags/index.php?tagname='.$infoarr[$i].'" target="_blank">'.$infoarr[$i].'</a> ';
+        }
+    }
+    if($bqr[mall]){
+    	$m=$empire->fetch1("select titleurl from {$dbtbpre}ecms_sj where title='".addslashes($bqr[mall])."'");
+    }
+    $mall=$m[titleurl]?'<a href="'.$m[titleurl].'" class="mall" target="_blank">'.$bqr[mall].'</a>':'<a class="mall">'.$bqr[mall].'</a>';
+?>
+<div class="list">
+      <div class="listTitle"> <a href="/<?=$class_r[$bqr[classid]]['classpath']?>" class="icon"><?=$class_r[$bqr[classid]]['classname']?></a>
+        <h4 class="itemName"><a href="<?=$bqsr[titleurl]?>" target="_blank"><?=$bqr[title]?><span class="red"><?=$bqr[price]?></span></a></h4>
+        <div class="clear"></div>
+      </div>
+      <a href="<?=$bqsr[titleurl]?>" target="_blank" class="picLeft" title=""><img src="<?=$bqr[titlepic]?>" width="190" height="190" style="margin-top:0px"  alt="<?=$bqr[title]?>"/></a>
+      <div class="listRight">
+        <div class="lrTop"> <span class="lrTime"><?=format_datetime($bqr[newstime],'H:i')?></span><? if($bqr[tjname]){echo '<span>推荐人：'.$bqr[tjname].'</span>';}?>  <span> 标签： <?=$tags?> </span> </div>
+        <div class="lrInfo xxbox<?=$bqr[id]?>"><?=$bqr[smalltext]?>...<a href="<?=$bqsr[titleurl]?>" target="_blank" classid="<?=$bqr[classid]?>" xxid="<?=$bqr[id]?>" class="showqw">展开全文</a></div>
+        <div class="lrBot"> <a href="javascript:void(0);" onclick="Digg('good',<?=$bqr[classid]?>,<?=$bqr[id]?>)" class="good" id="good<?=$bqr[id]?>"> <span class="scoreTotal"><b>值</b> <i class="goodnum" xxid="<?=$bqr[id]?>" classid="<?=$bqr[classid]?>">0</i></span></a> <a href="javascript:void(0);" onclick="Digg('not',<?=$bqr[classid]?>,<?=$bqr[id]?>)" class="bad" id="not<?=$bqr[id]?>"> <span class="scoreTotal"><b>不值</b> <i class="notnum" xxid="<?=$bqr[id]?>" classid="<?=$bqr[classid]?>">0</i></span> <span class="scoredInfo">已打分</span> <span class="scoreAnimate">+1</span> </a> <a href="javascript:void(0);" onclick="sc(<?=$bqr[classid]?>,<?=$bqr[id]?>)" class="fav" title="收藏"><em class="icon-collect"><!--[if lt IE 8]>收藏<![endif]--></em><i id="sc<?=$bqr[id]?>" xxid="<?=$bqr[id]?>" classid="<?=$bqr[classid]?>" class="scnum">0</i></a> <a href="<?=$bqsr[titleurl]?>#comments"  target="_blank" class="comment" title="评论"><em class="icon-comment"><!--[if lt IE 8]>评论<![endif]--></em><i class="plnum" xxid="<?=$bqr[id]?>" classid="<?=$bqr[classid]?>">0</i></a>
+          <div class="botPart">
+            <div class="buy"> <a href="/URL/<?=$bqr[zhurl]?>"  target="_blank">直达链接<i>&gt;</i></a> </div>
+            <?=$mall?> </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+[/e:loop]
+    </div>
+    <!-- list end --> 
+    <img src="52img/pic/loading.gif" class="loadingPic" alt="加载更多" classid="2" page="1"/>
+  </div>
+  <!-- leftWrap end--> 
+  
+  <!-- aside-->
+  <aside> 
+    <!-- rightPanel--> 
+    <!-- rightPanel-->
+<?
+  $userid=(int)getcvar('mluserid');
+  $usergroup=(int)getcvar('mlgroupid'); 
+  $username=RepPostVar(getcvar('mlusername'));
+  $rnd=getcvar('mlrnd');
+  $tdate=date("Y-m-d");
+  if($userid){
+  	$uu=$empire->fetch1("select userfen,money,qdtime from {$dbtbpre}enewsmember where userid='$userid' limit 1");
+    	$u=$empire->fetch1("select userpic from {$dbtbpre}enewsmemberadd where userid='$userid' limit 1");
+        
+   }
+$userpic=$u['userpic']?$u['userpic']:$public_r[newsurl].'e/data/images/nouserpic.gif';
+  $name=$username?$username:"你好";
+?>
+    <div class="rightPanel">
+      <div class="userInfo user_nosignIn" id="user_info"> <a href="/e/member/my/" class="userPic" target="_blank"><img src="<?=$userpic?>" alt="头像" id="user_info_avatar" width="60" height="60" /></a>
+        <div class="userRight">
+
+          <div> Hi <em id="user_info_name"><?=$name?></em> </div>
+<?
+if($userid){
+?>
+<p class="grey" id="user_info_score">积分:<em><?=$uu[userfen]?></em></p>
+<p class="grey" id="user_info_gold">余额:<em><?=$uu[money]?></em></p><br>    
+<?
+} else {
+?>
+	<p id="sign_login"><a href="javascript:login();">登录</a>，发现更多精彩</p>
+<?
+}
+?>
+        <a href="#" title="如何赚积分金币？" target="_blank">如何赚积分金币？</a> <a href="#" title="新手入门" target="_blank">新手入门</a> </div>
+<?
+if($userid){
+?>
+<div class="scoreBox">
+<?
+if($tdate==$uu[qdtime]){
+$q=$empire->fetch1("select total from {$dbtbpre}qd where userid='$userid' limit 1");
+?>
+<a id="user_info_tosign" class="signScored" style="cursor:pointer;" target="_blank">已签到<?=$q[total]?>天</a>
+<?
+} else {
+?>
+<a id="user_info_tosign" class="signScore" style="cursor:pointer;" target="_blank" href="javascript:void();" onClick="qd();">签到领积分</a>
+<?
+}
+?>
+		<div class="scoreExchangeWrap"><a class="scoreExchange" target="_blank">爆料投稿<i></i></a><div class="more_submissionWrap" style="display: none;"><ul class="more_submission"><span></span><li><a href="/e/DoInfo/ListInfo.php?mid=9" target="_blank">优惠爆料</a></li><li><a href="/e/DoInfo/ListInfo.php?mid=11" target="_blank">原创投稿</a></li></ul></div></div>
+	    </div>     
+<?
+} else {
+?>
+	<div class="scoreBox"> <a id="user_info_tosign" class="signScore" style="cursor:pointer;" href="javascript:qd();">签到领积分</a>
+          <div class="scoreExchangeWrap"><a href="/e/member/gshop/" class="scoreExchange" target="_blank">积分兑换</a></div>
+        </div>
+<?
+}
+?>
+      </div>
+    </div>
+    <!-- rightPanel end --> 
+
+    <div class="rightPanel">
+      <div class="hotRecommend">
+        <dl>
+          <dt>热点推荐</dt>
+          <dd class="listLink">[e:loop={"select tagname from {$dbtbpre}enewstags where tagid>0 order by num desc limit 20",20,24,0}]
+<a href="/e/tags/index.php?tagname=<?=$bqr[tagname]?>" target="_blank"><?=$bqr[tagname]?></a>
+[/e:loop]</dd>
+          <dd class="infoPage"> <a href="/category/" target="_blank">全部商品分类<s><i class="icon-right" style="
+    font-size: 12px;"></i></s></a> <a href="/mall/" target="_blank">商家导航<s><i class="icon-right" style="
+    font-size: 12px;"></i></s></a> </dd>
+        </dl>
+      </div>
+<div class="mult-nav-part commodity-nav" style="display: block;">
+    <a target="_blank" href="/category/diannaoshuma/"><span><i class="icon-diannaoshuma"></i>电脑数码</span></a>
+    <a target="_blank" href="/category/jiayongdianqi/"><span><i class="icon-jiayongdianqi"></i>家用电器</span></a>
+    <a target="_blank" href="/category/yundonghuwai/"><span><i class="icon-yundonghuwai"></i>运动户外</span></a>
+    <a target="_blank" href="/category/fushixiebao/"><span><i class="icon-fushixiebao"></i>服饰鞋包</span></a>
+    <a target="_blank" href="/category/gexinghuazhuang/"><span><i class="icon-gehuhuazhuang"></i>个护化妆</span></a>
+    <a target="_blank" href="/category/muyingyongpin/"><span><i class="icon-muyingyongpin"></i>母婴用品</span></a>
+    <a target="_blank" href="/category/riyongbaihuo/"><span><i class="icon-riyongbaihuo"></i>日用百货</span></a>
+    <a target="_blank" href="/category/shipinbaojian/"><span><i class="icon-shipinbaojian"></i>食品保健</span></a>
+    <a target="_blank" href="/category/lipinzhongbiao/"><span><i class="icon-lipinzhongbiao"></i>礼品钟表</span></a>
+    <a target="_blank" href="/category/tupianyingxiang/"><span><i class="icon-tushuyinxiang"></i>图书音像</span></a>
+    <a target="_blank" href="/category/wanmoyueqi/"><span><i class="icon-wanmoyueqi"></i>玩模乐器</span></a>
+    <a target="_blank" href="/category/bangongshebei/"><span><i class="icon-bangongshebei"></i>办公设备</span></a>
+    <a target="_blank" href="/category/jiajujiazhuang/"><span><i class="icon-jiajujiazhuang"></i>家居家装</span></a>
+    <a target="_blank" href="/category/qicheyongpin/"><span><i class="icon-qicheyongpin"></i>汽车用品</span></a>
+    <a target="_blank" href="/category/qita/"><span>其他分类<i class="icon-right_yuanjiantou"></i></span></a>
+</div>
+    </div>
+
+        
+    <div class="rightPanel"> 
+    </div>
+    <!-- rightPanel-->
+    <div class="rightPanel beyondHide">
+      <h2 class="panelTitle"><a href="/category/">更多 &gt;</a>优惠频道 最新内容</h2>
+      <ul class="ninePicBox">
+[e:loop={2,9,0,1}]
+<li><a href="<?=$bqsr[titleurl]?>" title="<?=$bqr[title]?>" target="_blank"> <img src="<?=$bqr[titlepic]?>" alt="<?=$bqr[title]?>" style="width:94px; height:94px;"/>
+            <div class="tabCon">
+              <p><?=$bqr[title]?></p>
+              <span><?=$bqr[price]?></span> </div>
+</a></li>
+[/e:loop]
+      </ul>
+    </div>
+    <!-- rightPanel end--> 
+    
+
+    <!-- rightPanel-->
+    
+    <div class="rightPanel"> 
+    </div>
+    <!-- rightPanel end--> 
+    
+    <!-- rightPanel-->
+    <div class="rightPanel">
+      <h2 class="panelTitle"> <a href="/shaidan/">更多 &gt;</a> 热门晒单 </h2>
+      <ul class="rightHotExp">
+[e:loop={205,5,1,1}]
+<?
+if($bqno=="1"){$class="listCurrent";} else {$class="listItem";}
+?>
+<li class="<?=$class?>"> <a target="_blank" class="smallPic" href="<?=$bqsr[titleurl]?>"><img src="<?=$bqr[titlepic]?>" alt="<?=$bqr[title]?>"  height="78" width="78" ></a>
+          <div class="listInfo">
+            <div class="itemName"><a target="_blank" href="<?=$bqsr[titleurl]?>"><?=$bqr[title]?></a></div>
+            <div class="listBot"><span><i>赞</i><i class="goodnum" xxid="<?=$bqr[id]?>" classid="<?=$bqr[classid]?>">0</i></span><span><i>评论</i><i class="plnum" xxid="<?=$bqr[id]?>" classid="<?=$bqr[classid]?>">0</i></span></div>
+          </div>
+        </li>
+[/e:loop]
+      </ul>
+    </div>
+    <!-- rightPanel end--> 
+    <!-- rightPanel-->
+    <div class="AddChange rightPanel"> 
+      <!--新增加右侧栏挂件-->
+      <h3 class="panelTitle">热门优惠<a href="/category/">更多 ></a></h3>
+      <div class="rightHotExp">
+        <div class="slider single-item general_bg"> 
+          <!-- div -->
+[e:loop={2,5,0,1}]
+<div> <a href="<?=$bqsr[titleurl]?>" target="_blank" class="pic_box"><img src="<?=$bqr[titlepic]?>" width="300" height="160" alt="<?=$bqr[title]?>" class="w300x160"/></a>
+            <p><span><?=esub($bqr[title],30)?></span><a href="<?=$bqsr[titleurl]?>">立即查看</a></p>
+</div>
+[/e:loop]
+        </div>
+      </div>
+      <ul class="general_bg hot_public_test">
+[e:loop={2,'5,3',0,1}]
+<li class="list_item"> <a href="<?=$bqsr[titleurl]?>" class="small_pic" target="_blank"><img src="<?=$bqr[titlepic]?>" alt="<?=$bqr[title]?>" /></a>
+          <div class="list_info">
+            <div class="list_name"><a href="<?=$bqsr[titleurl]?>" target="_blank"><?=$bqr[title]?></a></div>
+            <div class="list_bot"><span class="grey"><i>赞</i><i class="goodnum" xxid="<?=$bqr[id]?>" classid="<?=$bqr[classid]?>">0</i></span><span class="grey"><i>评论</i><i class="plnum" xxid="<?=$bqr[id]?>" classid="<?=$bqr[classid]?>">0</i></span></div>
+          </div>
+        </li>
+[/e:loop]
+      </ul>
+    </div>
+    <!-- rightPanel end--> 
+    
+    <!-- rightPanel-->
+    <div class="rightPanel">
+      <h2 class="panelTitle"><a href="/news/">更多 &gt;</a>热门资讯</h2>
+      <ul class="rightHotNews">
+        <!-- listCurrent-->
+[e:loop={220,5,0,1}]
+<?
+if($bqno=="1"){$class="listCurrent";} else {$class="listItem";}
+?>
+<li class="<?=$class?>"> <a target="_blank" class="smallPic" href="<?=$bqsr[titleurl]?>"><img src="<?=$bqr[titlepic]?>" alt="<?=$bqr[title]?>"  height="78" width="78" ></a>
+          <div class="listInfo">
+            <div class="itemName"><a target="_blank" href="<?=$bqsr[titleurl]?>"><?=$bqr[title]?></a></div>
+            <div class="listBot"><span><i>赞</i><i class="goodnum" xxid="<?=$bqr[id]?>" classid="<?=$bqr[classid]?>">0</i></span><span><i>评论</i><i class="plnum" xxid="<?=$bqr[id]?>" classid="<?=$bqr[classid]?>">0</i></span></div>
+          </div>
+        </li>
+[/e:loop]
+        <!-- listCurrent end-->
+      </ul>
+    </div>
+  </aside>
+  <!-- aside end -->
+  <div class="clear"></div>
+  <div class="g_g"> 
+  </div>
+</section>
+<!-- section end -->
+
+<footer id="footer"> 
+  <div class="footer">
+    <div class="lFloat">
+      <div class="footerTop"> <a href="/about/index.html" target="_blank">关于我们</a> <a href="/about/contact.html" target="_blank">联系我们</a> <a href="/about/zp.html">招聘专区</a> <a href="#" class="sitemap">网站地图</a> <a href="#">海淘攻略</a> <a href="#">海淘资讯</a> <a href="#">海淘晒物</a> </div>
+      <div class="footerLink">
+        <div class="linkTitle">友情链接<span>（<a href="#">申请</a>）</span></div>
+        <ul>
+[phomelink]99,99,0,0,1[/phomelink]
+        </ul>
+      </div>
+      <div class="info"> 版权所有 本站内容未经书面许可，禁止一切形式的转载。<br/>
+       好公道 版权所有 Copyright 2017 - 2018 www.hgdly.com All Rights Reserved.</div>
+    </div>
+    <div class="rFloat">
+      <div class="f_weiXin">
+        <div><img src="/52img/pic/weixin.png"></div>
+        <span><span><i class="icon-weixin"><!--[if lt IE 8]>微信<![endif]--></i></span>smzdm_smzdm</span> </div>
+      <div class="f_weiBo"> <span><span><i class="icon-weibo"><!--[if lt IE 8]>微博<![endif]--></i></span><a href="http://weibo.com/smzdm" target="_blank">关注<?=$public_r['add_webname']?>微博</a></span> </div>
+      <div class="f_Rss"> <span><span><i class="icon-rss"><!--[if lt IE 8]>订阅中心<![endif]--></i></span><a href="/e/web/?type=rss2&classid=0" target="_blank">Rss 订阅中心</a></span> </div>
+    </div>
+  </div>
+</footer>
+
+<div id="index-scroll"  style="width:44px; height:48px; position:fixed; left:50%; bottom:42px; margin-left:540px;  z-index:100; text-align:center; cursor:pointer;"> 
+<a  title="返回顶部"></a> 
+</div>
+</body>
+</html>
