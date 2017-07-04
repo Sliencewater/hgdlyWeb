@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>[!--pagetitle--]_<?=$public_r[sitename]?></title>
+<meta name="keywords" content=" [!--pagekey--] " />
+<meta name="description" content=" [!--pagedes--]" />
+[!--temp.cssjs1--]
+[!--temp.tz--]
+</head>
+<body>
+<header>
+  [!--temp.topnav--]
+  [!--temp.header--]
+<div class="seconddhNav secondNavOversea">
+    <h2><a href="/shaidan/"><span class="icon-yuanchuanghome"></span>晒单首页</a></h2>
+    <h2><a href="/shaidan/shaiwu/" ><span class="icon-kaixiangshaiwu"></span>开箱晒物</a></h2>
+    <h2><a href="/shaidan/pingce/" ><span class="icon-shiyongpingce"></span>使用评测</a></h2>
+    <h2><a href="/shaidan/gonglve/" ><span class="icon-gouwugonglue"></span>购物攻略</a></h2>
+    <h2><a href="/shaidan/xiaofei/" ><span class="icon-xiaofeizhishi"></span>消费知识</a></h2>
+    <h2><a href="/shaidan/lvyou/" ><span class="icon-sheyinglvyou"></span>摄影旅游</a></h2>
+    <h2><a href="/shaidan/jilu/" ><span class="icon-shenghuojilu"></span>生活记录</a></h2>
+    <div class="fenlei"> <a href="javascript:;"> <span class="icon-shangpinfenlei"></span>商品分类<i></i> </a>
+      <div class="head_Class" style="display:none;">
+        <ul>
+        [showclasstemp]2,13,0,0[/showclasstemp] 
+          <li><a href="/category/">全部分类</a></li>
+        </ul>
+        <dl>
+          <dt>热&nbsp;门：</dt>
+[e:loop={"select tagname from {$dbtbpre}enewstags where tagid>0 order by num desc limit 10",10,24,0}]
+<dd ><a href="/e/tags/index.php?tagname=<?=$bqr[tagname]?>"><?=$bqr[tagname]?></a></dd>
+[/e:loop]
+        </dl>
+      </div>
+    </div>
+  </div>
+</header>
+<section class="wrap">
+  <div class="wrap index">
+    <!-- top_Hot start-->
+    <div class="top_Hot">
+      <div class="panelTitle"><span class="custom_page"></span>编辑推荐</div>
+      <!-- slider -->
+      <div class="slider uneven hot_page">
+[e:loop={'selfinfo',6,1,1}]
+<?
+	$s=$empire->fetch1("select userpic from {$dbtbpre}enewsmemberadd where userid='$bqr[userid]'");
+    $userpic=$s[userpic]?$s[userpic]:"e/data/images/nouserpic.gif";
+?>
+<div> <a href="<?=$bqsr[titleurl]?>" target="_blank" class="picBox"><img src="<?=$bqr[titlepic]?>" alt="<?=$bqr[title]?>" /><span class="small_cover"></span></a> <a href="<?=$bqsr[titleurl]?>" target="_blank" class="sliderTitle"><?=$bqr[title]?></a>
+          <div class="hot_head"> <a href="/e/space?userid=<?=$bqr[userid]?>" target="_blank"><img src="<?=$userpic?>"></a> <a href="/e/space?userid=<?=$bqr[userid]?>" target="_blank"><?=$bqr[username]?></a> </div>
+        </div>
+[/e:loop] 
+      </div>
+      <!-- slider end--> 
+    </div>
+    <!-- top_Hot end -->
+<?
+$tday=date("Y-m-d");
+$sevenday=date("Y-m-d",strtotime('-7 day'));
+?>
+    <div class="recommend_tab">
+      <div class="index_title"><span>全部</span></div>
+      <ul class="tab_Right">
+        <li class="active"><span><a href="/<?=$class_r[$GLOBALS[navclassid]]['classpath']?>">最新</a></span></li>
+        <li ><span><a href="/e/action/ListInfo.php?classid=<?=$GLOBALS[navclassid]?>&ph=1&starttime=<?=$sevenday?>&endtime=<?=$tday?>&orderby=onclick">周热门</a></span></li>
+        <li ><span><a href="/e/action/ListInfo.php?classid=<?=$GLOBALS[navclassid]?>&ph=1&orderby=onclick">总热门</a></span></li>
+      </ul>
+    </div>
+    <!-- top_Hot end -->
+    <div class="recommend_content">
+    <ul>
+[!--empirenews.listtemp--]
+<!--list.var1-->
+[!--empirenews.listtemp--]
+    </ul>
+    </div>
+    <div class="clear"></div>
+    <ul class="pagination">
+    [!--show.listpage--]
+    </ul>
+  </div>
+  <div class="bot_Banner g_g"> 
+</div>
+</section>
+[!--temp.footer--]
+</body>
+</html>
