@@ -1,0 +1,220 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>[!--pagetitle--]_[!--class.name--]_<?=$public_r[sitename]?></title>
+<meta name="keywords" content=" [!--pagekey--] " />
+<meta name="description" content=" [!--pagedes--]" />
+[!--temp.cssjs--]
+[!--temp.tz--]
+</head>
+<body>
+<header> 
+  [!--temp.topnav--]
+  [!--temp.header--]
+</header>
+<!--header end--
+><!-- section -->
+<section class="wrap"> 
+  <!-- leftWrap-->
+  <div class="leftWrap"> 
+    <!-- crumbs-->
+    <div class="crumbs"> 当前位置：
+    [!--newsnav--]
+    <span class="arrow">&gt;</span> 文章详情 </div>
+    <!-- crumbs end--> 
+    <!-- article -->
+    <article itemscope itemtype="http://schema.org/Product">
+      <h1 class="article_title " itemprop="name"> [!--title--] <span class="red" itemprop="offers" itemscope itemtype="http://schema.org/Offer">[!--price--]</span></h1>
+      <div class="article_meta article_meta_nowrap"> <span class="lrTime">[!--newstime--]</span>
+        <meta itemprop="datePublished" content="[!--newstime--]">
+<?
+if($navinfor[tjname]){
+	echo '<div class="recommend lFloat">推荐人：'.$navinfor[tjname].'</div>';
+}
+    if($navinfor[infotags]){
+    	$infoarr=explode(',',$navinfor[infotags]);
+        for($i=0;$i<count($infoarr);$i++){
+        	$tags.='<a href="/e/tags/index.php?tagname='.$infoarr[$i].'" target="_blank">'.$infoarr[$i].'</a> ';
+        }
+    }
+?>
+        
+        <span class="lFloat">分类： <a href="[!--class.url--]">[!--class.name--]</a> </span> <span class="lFloat">标签： <?=$tags?> </span>
+        <div class="clear"></div>
+      </div>
+      <div class="news_content">
+        <dl class="list_catalogue">
+          <dd></dd>
+        </dl>
+        <div class="article_picwrap"> <a class="picLeft" target="_blank"  href="/e/extend/url/?url=[!--zhurl--]"><img  width="190px" height="190px" style="margin-top:0px"  src="[!--titlepic--]"></a>
+          <div class="buy"> <a href="/URL/[!--zhurl--]" target="_blank">直达链接<i>&gt;</i></a> </div>
+<?
+if($navinfor[mall]){
+    $m=$empire->fetch1("select titleurl from {$dbtbpre}ecms_sj where title='".addslashes($navinfor[mall])."'");
+}
+$mall=$m[titleurl]?'<a href="'.$m[titleurl].'" class="mall" target="_blank">'.$navinfor[mall].'</a>':'<a class="mall">'.$navinfor[mall].'</a>';
+?>
+          <?=$mall?></div>
+       [!--newstext--]
+      </div>
+    </article>
+    <!-- article end -->
+    
+    <!-- slogan -->
+    <div class="slogan">“什么值得买”是一个中立的，致力于帮助广大网友买到更有性价比网购产品的分享平台，每天为网友们提供严谨的、准确的、新鲜的、丰富的网购产品特价资讯。我们的信息大部分来自于网友爆料，如果您发现了优质的产品或好的价格，不妨给我们爆料（谢绝商家）吧，<a href="/e/DoInfo/ListInfo.php?mid=9" target="_blank" class="a_underline">点此爆料</a>。优惠信息有时效性和地域性，还请各位网友购买时注意核实。</div>
+    <!-- slogan end --> 
+    
+    <!-- operate_box -->
+    <div class="operate_box">
+      <div class="pre_next_article"> <span>上一篇[!--info.pre--]</span> <span>下一篇[!--info.next--]</span> </div>
+      <div class="operate_icon">
+        <div class="bdsharebuttonbox operateShare" data-tag="share_2"> <a href="javascript:void(0);" title="分享" class="bds_more shareWords" data-cmd="more" style="color:#999">分享 +</a> </div>
+        <a title="收藏" class="fav" id="collect_1_678583" href="javascript:void(0);" onclick="sc([!--classid--],[!--id--])"><em class="icon-collect"><!--[if lt IE 8]>收藏<![endif]--></em><i><script src=[!--news.url--]e/public/ViewClick/?classid=[!--classid--]&id=[!--id--]></script></i></a> <a title="评论" class="comment" href="#comments"><em class="icon-comment"><!--[if lt IE 8]>评论<![endif]--></em><i ><script src=[!--news.url--]e/public/ViewClick/?classid=[!--classid--]&id=[!--id--]&down=2></script></i></a> </div>
+    </div>
+    <!-- operate_box end --> 
+    
+    <!-- guess_like -->
+    <div class="guess_like">
+      <div class="panelTitle"><span class="custom_page"></span>你可能还喜欢</div>
+      <div class="slider uneven banner_page">
+[e:loop={'selfinfo',16,0,1}]
+<div> <a href="<?=$bqsr[titleurl]?>" target="_blank" class="picBox"> <img src="<?=$bqr[titlepic]?>" alt="<?=$bqr[title]?>"  width="170px" height="170px" style="margin-top:0px" /> </a> <a href="<?=$bqsr[titleurl]?>" target="_blank" class="sliderTitle"> <?=$bqr[title]?><span class="red"><?=$bqr[price]?></span> </a> </div>
+[/e:loop]
+      </div>
+    </div>
+[!--temp.pl--]
+  </div>
+  <!-- leftWrap end--> 
+  <!-- aside-->
+  <aside> 
+[!--temp.dingyue--]
+    [!--temp.yhjx--]
+    <div class="rightPanel"> 
+    </div>
+    <!-- rightPanel-->
+    <div class="rightPanel">
+      <h2 class="panelTitle">相关晒单</h2>
+      <ul class="rightHotExp">
+[e:loop={205,5,0,1}]
+<?
+if($bqno=="1"){$class="listCurrent";} else {$class="listItem";}
+?>
+<li class="<?=$class?>"> <a target="_blank" class="smallPic" href="<?=$bqsr[titleurl]?>"><img src="<?=$bqr[titlepic]?>" alt="<?=$bqr[title]?>"  height="78" width="78" ></a>
+          <div class="listInfo">
+            <div class="itemName"><a target="_blank" href="<?=$bqsr[titleurl]?>"><?=$bqr[title]?></a></div>
+            <div class="listBot"><span><i>赞</i><script src="[!--news.url--]e/public/ViewClick/?classid=<?=$bqr[classid]?>&id=<?=$bqr[id]?>&down=5"></script></span><span><i>评论</i><script src="[!--news.url--]e/public/ViewClick/?classid=<?=$bqr[classid]?>&id=<?=$bqr[id]?>&down=2"></script></span></div>
+          </div>
+        </li>
+[/e:loop]
+      </ul>
+    </div>
+    <!-- rightPanel-->
+    <div class="rightPanel beyondHide">
+      <ul class="tab_nav" id="tabNav2">
+        <li class="tab_faxian_li current_item">
+          <h3>最新优惠</h3>
+        </li>
+        <li class="tab_faxian_li">
+          <h3>热门优惠</h3>
+        </li>
+        <li class="more"><a href="/category/" target="_blank">更多 &gt;</a></li>
+      </ul>
+      <div class="tab_info_con">
+        <ul class="ninePicBox">
+[e:loop={2,9,0,1}]
+<li><a href="<?=$bqsr[titleurl]?>" title="<?=$bqr[title]?>" target="_blank"> <img src="<?=$bqr[titlepic]?>" alt="<?=$bqr[title]?>" style="width:94px; height:94px;"/>
+            <div class="tabCon">
+              <p><?=$bqr[title]?></p>
+              <span><?=$bqr[price]?></span> </div>
+</a></li>
+[/e:loop]
+        </ul>
+      </div>
+      <div class="tab_info_con"  style="display:none;">
+        <ul class="ninePicBox">
+[e:loop={2,9,1,1}]
+<li><a href="<?=$bqsr[titleurl]?>" title="<?=$bqr[title]?>" target="_blank"> <img src="<?=$bqr[titlepic]?>" alt="<?=$bqr[title]?>" style="width:94px; height:94px;"/>
+            <div class="tabCon">
+              <p><?=$bqr[title]?></p>
+              <span><?=$bqr[price]?></span> </div>
+</a></li>
+[/e:loop]
+        </ul>
+      </div>
+    </div>
+    
+    <!-- rightPanel-->
+<div class="rightPanel">
+      <ul class="tab_nav_set" id="tabNav">
+        <li class="tab_set_li current_item">
+          <h3>优惠</h3>
+        </li>
+        <li class="tab_set_li ">
+          <h3>商家</h3>
+        </li>
+        <li class="tab_set_li ">
+          <h3>晒单</h3>
+        </li>
+        <li class="tab_set_li ">
+          <h3>资讯</h3>
+        </li>
+      </ul>
+      <div style="display: block;" class="tab_set_info">
+        <ul class="rightHotShow">
+[e:loop={2,3,1,1}]
+<li class="showList"> <a target="_blank" class="smallPic" href="<?=$bqsr[titleurl]?>"><img  height="78" width="78"  alt="<?=$bqr[title]?>" src="<?=$bqr[titlepic]?>"></a>
+            <div class="listInfo">
+              <div class="itemName"><a target="_blank" href="<?=$bqsr[titleurl]?>"><?=$bqr[title]?></a></div>
+              <div class="listBot"><span><i>收藏</i><script src="[!--news.url--]e/public/ViewClick/?classid=<?=$bqr[classid]?>&id=<?=$bqr[id]?>&down=9"></script></span><span><i>评论</i><script src="[!--news.url--]e/public/ViewClick/?classid=<?=$bqr[classid]?>&id=<?=$bqr[id]?>&down=2"></script></span></div>
+            </div>
+          </li>
+[/e:loop]
+        </ul>
+        <a href="/category/" class="more">查看全部</a></div>
+      <div style="display: none;" class="tab_set_info">
+        <ul class="ninePicBox">
+[e:loop={212,9,0,1}]
+          <li><a target="_blank" title="<?=$bqr[title]?>" href="<?=$bqsr[titleurl]?>"><img alt="<?=$bqr[title]?>" src="<?=$bqr[titlepic]?>" width="94"></a></li>
+[/e:loop]
+        </ul>
+        <a href="/mall/" class="more">查看全部</a></div>
+      <div style="display: none;" class="tab_set_info">
+        <ul class="rightHotShow">
+[e:loop={205,3,1,1}]
+<li class="showList"> <a target="_blank" class="smallPic" href="<?=$bqsr[titleurl]?>"><img  height="78" width="78"  alt="<?=$bqr[title]?>" src="<?=$bqr[titlepic]?>"></a>
+            <div class="listInfo">
+              <div class="itemName"><a target="_blank" href="<?=$bqsr[titleurl]?>"><?=$bqr[title]?></a></div>
+              <div class="listBot"><span><i>收藏</i><script src="[!--news.url--]e/public/ViewClick/?classid=<?=$bqr[classid]?>&id=<?=$bqr[id]?>&down=9"></script></span><span><i>评论</i><script src="[!--news.url--]e/public/ViewClick/?classid=<?=$bqr[classid]?>&id=<?=$bqr[id]?>&down=2"></script></span></div>
+            </div>
+          </li>
+[/e:loop]
+        </ul>
+        <a href="/shaidan/" class="more">查看全部</a></div>
+      <div style="display: none;" class="tab_set_info">
+        <ul class="rightHotShow">
+[e:loop={220,3,1,1}]
+<li class="showList"> <a target="_blank" class="smallPic" href="<?=$bqsr[titleurl]?>"><img  height="78" width="78"  alt="<?=$bqr[title]?>" src="<?=$bqr[titlepic]?>"></a>
+            <div class="listInfo">
+              <div class="itemName"><a target="_blank" href="<?=$bqsr[titleurl]?>"><?=$bqr[title]?></a></div>
+              <div class="listBot"><span><i>收藏</i><script src="[!--news.url--]e/public/ViewClick/?classid=<?=$bqr[classid]?>&id=<?=$bqr[id]?>&down=9"></script></span><span><i>评论</i><script src="[!--news.url--]e/public/ViewClick/?classid=<?=$bqr[classid]?>&id=<?=$bqr[id]?>&down=2"></script></span></div>
+            </div>
+          </li>
+[/e:loop]
+        </ul>
+        <a href="/news/" class="more">查看全部</a></div>
+    </div>
+
+  </aside>
+  <!-- aside end -->
+  
+  <div class="clear"></div>
+  
+  <div class="g_g"> 
+  </div>
+</section>
+[!--temp.footer--]
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+<div style="display:none"><script src=[!--news.url--]e/public/ViewClick/?classid=[!--classid--]&id=[!--id--]&addclick=1></script></div>
+</body>
+</html>
