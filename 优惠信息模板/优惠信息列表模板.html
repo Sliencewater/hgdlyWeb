@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>手快有_<?=$public_r[sitename]?></title>
+<meta name="keywords" content=" [!--pagekey--] " />
+<meta name="description" content=" [!--pagedes--]" />
+[!--temp.cssjs--]
+[!--temp.tz--]
+</head>
+<body>
+<header> 
+  [!--temp.topnav--]
+  [!--temp.header--]
+</header>
+<!--header end--><!-- section -->
+<section class="wrap"> 
+  <!-- leftWrap-->
+  <div class="leftWrap"> 
+    <!-- banner -->
+    <div class="oversea_banner">
+      <div class="slider uneven banner_nopage">
+<div e:loop="{'selfinfo',8,1,1}"></div>
+<div> <a href="<?=$bqsr[titleurl]?>" target="_blank" class="picBox"> <img src="<?=$bqr[titlepic]?>" alt="<?=$bqr[title]?>"  width="170px" height="170px" style="margin-top:0px" /> </a>
+          <h2> <a href="<?=$bqsr[titleurl]?>" target="_blank" class="sliderTitle"> <?=$bqr[title]?> <span class="red"><?=$bqr[price]?></span> </a> </h2>
+        </div>
+[/e:loop]
+      </div>
+    </div>
+    <!-- banner end--> 
+    <!-- screenPannel-->
+    <div class="screenPannel"> 
+      <!-- tab_nav-->
+      <ul class="tab_nav">
+        <li class="tab_li current_item"><span>热门标签</span></li>
+        <li class="tab_li "><span>分类筛选</span></li>
+        <li class="tab_li "><span>商城筛选</span></li>
+      </ul>
+      <!-- tab_nav end--> 
+      <!-- more_screen-->
+      <div class="more_screen">
+        <div class="tab_info"style=""> 
+[e:loop={"select tagname from {$dbtbpre}enewstags where tagid>0 order by num desc limit 20",20,24,0}]
+<a href="/e/tags/index.php?tagname=<?=$bqr[tagname]?>"><?=$bqr[tagname]?></a>
+[/e:loop]
+        </div>
+        <div class="tab_info" style=""> 
+          <!-- tab_info--> 
+[showclasstemp]'selfinfo',1,0,0[/showclasstemp] 
+          <!-- tab_info end-->
+        </div>
+        <div class="tab_info" style=""> 
+[e:loop={212,20,0,0}]
+<a href="/e/action/ListInfo.php?classid=<?=$GLOBALS['navclassid']?>&ph=1&mall=<?=$bqr[title]?>"><?=$bqr[title]?></a>
+[/e:loop]
+          <!-- tab_info end--> 
+         </div>
+      </div>
+      <!-- more_screen end--> 
+    </div>
+    <!-- screenPannel end-->
+    
+    <div> 
+    </div>
+    <!-- list -->
+[!--empirenews.listtemp--]
+<!--list.var1-->
+[!--empirenews.listtemp--] 
+
+    <!-- list end --> 
+
+    <ul class="pagination">
+    [!--show.listpage--]
+    </ul>
+  </div>
+  <!-- leftWrap end--> 
+  <!-- aside-->
+  <aside> 
+[!--temp.dingyue--]
+   [!--temp.yhjx--]
+    <!-- rightPanel-->
+    <div class="rightPanel beyondHide">
+      <h2 class="panelTitle"><a href="/shaidan/" >更多 &gt;</a>晒单频道 最新内容</h2>
+      <ul class="ninePicBox">
+[e:loop={205,9,0,1}]
+<li><a href="<?=$bqsr[titleurl]?>" title="<?=$bqr[title]?>" target="_blank"><img src="<?=$bqr[titlepic]?>" alt="<?=$bqr[title]?>" width="94" height="94" /></a></li>
+[/e:loop]
+      </ul>
+    </div>
+    <!-- rightPanel end--> 
+    <!-- rightPanel-->
+    <div class="AddChange rightPanel"> 
+      <!--新增加右侧栏挂件-->
+      <h3 class="panelTitle">最新晒单<a href="/shaidan/" >更多 ></a></h3>
+      <div class="rightHotExp">
+        <div class="slider single-item general_bg"> 
+          <!-- div -->
+[e:loop={205,5,0,1}]
+<div> <a href="<?=$bqsr[titleurl]?>" target="_blank" class="pic_box"><img src="<?=$bqr[titlepic]?>" width="300" height="160" alt="<?=$bqr[title]?>"/></a>
+            <p><span><?=esub($bqr[title],30)?></span><a href="<?=$bqsr[titleurl]?>">立即查看</a></p>
+</div>
+[/e:loop]
+          <!-- div end --> 
+        </div>
+      </div>
+      <ul class="general_bg hot_public_test">
+[e:loop={205,'5,3',0,1}]
+<li class="list_item"> <a href="<?=$bqsr[titleurl]?>" class="small_pic" target="_blank"><img src="<?=$bqr[titlepic]?>" alt="<?=$bqr[title]?>" /></a>
+          <div class="list_info">
+            <div class="list_name"><a href="<?=$bqsr[titleurl]?>" target="_blank"><?=$bqr[title]?></a></div>
+            <div class="list_bot"><span class="grey"><i>赞</i><i class="goodnum" xxid="<?=$bqr[id]?>" classid="<?=$bqr[classid]?>">0</i></span><span class="grey"><i>评论</i><i class="plnum" xxid="<?=$bqr[id]?>" classid="<?=$bqr[classid]?>">0</i></span></div>
+          </div>
+        </li>
+[/e:loop]
+      </ul>
+    </div>
+    <!-- rightPanel end--> 
+    
+    <!-- rightPanel-->
+<div class="rightPanel">
+      <ul class="tab_nav_set" id="tabNav">
+        <li class="tab_set_li current_item">
+          <h3>优惠</h3>
+        </li>
+        <li class="tab_set_li ">
+          <h3>商家</h3>
+        </li>
+        <li class="tab_set_li ">
+          <h3>晒单</h3>
+        </li>
+        <li class="tab_set_li ">
+          <h3>资讯</h3>
+        </li>
+      </ul>
+      <div style="display: block;" class="tab_set_info">
+        <ul class="rightHotShow">
+[e:loop={2,3,1,1}]
+<li class="showList"> <a target="_blank" class="smallPic" href="<?=$bqsr[titleurl]?>"><img  height="78" width="78"  alt="<?=$bqr[title]?>" src="<?=$bqr[titlepic]?>"></a>
+            <div class="listInfo">
+              <div class="itemName"><a target="_blank" href="<?=$bqsr[titleurl]?>"><?=$bqr[title]?></a></div>
+              <div class="listBot"><span><i>收藏</i><i id="sc<?=$bqr[id]?>" xxid="<?=$bqr[id]?>" classid="<?=$bqr[classid]?>" class="scnum">0</i></span><span><i>评论</i><i class="plnum" xxid="<?=$bqr[id]?>" classid="<?=$bqr[classid]?>">0</i></span></div>
+            </div>
+          </li>
+[/e:loop]
+        </ul>
+        <a href="/category/" class="more">查看全部</a></div>
+      <div style="display: none;" class="tab_set_info">
+        <ul class="ninePicBox">
+[e:loop={212,9,0,1}]
+          <li><a target="_blank" title="<?=$bqr[title]?>" href="<?=$bqsr[titleurl]?>"><img alt="<?=$bqr[title]?>" src="<?=$bqr[titlepic]?>" width="94"></a></li>
+[/e:loop]
+        </ul>
+        <a href="/mall/" class="more">查看全部</a></div>
+      <div style="display: none;" class="tab_set_info">
+        <ul class="rightHotShow">
+[e:loop={205,3,1,1}]
+<li class="showList"> <a target="_blank" class="smallPic" href="<?=$bqsr[titleurl]?>"><img  height="78" width="78"  alt="<?=$bqr[title]?>" src="<?=$bqr[titlepic]?>"></a>
+            <div class="listInfo">
+              <div class="itemName"><a target="_blank" href="<?=$bqsr[titleurl]?>"><?=$bqr[title]?></a></div>
+              <div class="listBot"><span><i>收藏</i><i id="sc<?=$bqr[id]?>" xxid="<?=$bqr[id]?>" classid="<?=$bqr[classid]?>" class="scnum">0</i></span><span><i>评论</i><i class="plnum" xxid="<?=$bqr[id]?>" classid="<?=$bqr[classid]?>">0</i></span></div>
+            </div>
+          </li>
+[/e:loop]
+        </ul>
+        <a href="/shaidan/" class="more">查看全部</a></div>
+      <div style="display: none;" class="tab_set_info">
+        <ul class="rightHotShow">
+[e:loop={220,3,1,1}]
+<li class="showList"> <a target="_blank" class="smallPic" href="<?=$bqsr[titleurl]?>"><img  height="78" width="78"  alt="<?=$bqr[title]?>" src="<?=$bqr[titlepic]?>"></a>
+            <div class="listInfo">
+              <div class="itemName"><a target="_blank" href="<?=$bqsr[titleurl]?>"><?=$bqr[title]?></a></div>
+              <div class="listBot"><span><i>收藏</i><i id="sc<?=$bqr[id]?>" xxid="<?=$bqr[id]?>" classid="<?=$bqr[classid]?>" class="scnum">0</i></span><span><i>评论</i><i class="plnum" xxid="<?=$bqr[id]?>" classid="<?=$bqr[classid]?>">0</i></span></div>
+            </div>
+          </li>
+[/e:loop]
+        </ul>
+        <a href="/news/" class="more">查看全部</a></div>
+    </div>
+  </aside>
+  <!-- aside end -->
+  <div class="clear"></div>
+  <div class="g_g"> 
+  </div>
+</section>
+
+<!-- section end -->
+
+[!--temp.footer--]
+</body>
+</html>
