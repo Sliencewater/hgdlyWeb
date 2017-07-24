@@ -12,23 +12,72 @@
     if($r[tjname]){
     $tjr='<span>推荐人：'.$r[tjname].'</span>';
     }
-$listtemp='<div class="list list_preferential">
-      <div class="listTitle">
-        <h2 class="itemName"><a href="[!--titleurl--]" target="_blank">[!--title--]<span class="red">[!--price--]</span></a></h2>
-        <div class="clear"></div>
-      </div>
-      <a href="[!--titleurl--]" target="_blank" class="picLeft" title="[!--title--]"><img src="[!--titlepic--]"  width="190px" height="190px" style="margin-top:0px"  alt="[!--title--]"/></a>
-      <div class="listRight">
-        <div class="lrTop"> <span class="lrTime">[!--newstime--]</span><?=$tjr?>  <span>标签：'.$tags.' </span> </div>
-        <div class="lrInfo xxbox[!--id--]">
-          <p>[!--smalltext--]...<a href="[!--titleurl--]" target="_blank" classid="[!--classid--]" xxid="[!--id--]" class="showqw">展开全文</a></p>
-        </div>
-        <div class="lrBot"> <a href="javascript:void(0);" onclick="Digg(\'good\',[!--classid--],[!--id--])" class="good" id="good[!--id--]"> <span class="scoreTotal"><b>公</b> <i class="goodnum" xxid="[!--id--]" classid="[!--classid--]">0</i></span></a> <a href="javascript:void(0);" onclick="Digg(\'not\',[!--classid--],[!--id--])" class="bad" id="not[!--id--]"> <span class="scoreTotal"><b>不公</b> <i class="notnum" xxid="[!--id--]" classid="[!--classid--]">0</i></span> <span class="scoredInfo">已打分</span> <span class="scoreAnimate">+1</span> </a> <a href="javascript:void(0);" onclick="sc([!--classid--],[!--id--])" class="fav" title="收藏"><em class="icon-collect"><!--[if lt IE 8]>收藏<![endif]--></em><i id="sc[!--id--]" xxid="[!--id--]" classid="[!--classid--]" class="scnum">0</i></a> <a href="[!--titleurl--]#comments"  target="_blank" class="comment" title="评论"><em class="icon-comment"><!--[if lt IE 8]>评论<![endif]--></em><i class="plnum" xxid="[!--id--]" classid="[!--classid--]">0</i></a>
-          <div class="botPart">
-            <div class="buy"> <a href="/URL/[!--zhurl--]"  target="_blank">直达链接<i>&gt;</i></a> </div>
-            '.$mall.' </div>
-          <div class="clear"></div>
-        </div>
-      </div>
-      <div class="clear"></div>
-    </div>';
+$listtemp='<li>
+                <div class="feed-block-ver ">
+
+                    <!-- 展示图片-->
+                        <div class="feed-ver-pic">
+                                                        <a href="[!--titleurl--]" target="_blank">
+                                <img src="[!--titlepic--]"  title="[!--title--]" width="200px" height="200px" style="margin-top:0px">
+                            </a>
+                                                       
+                                                    </div>
+                        <!-- 展示图片END-->
+
+                        <!-- 标题-->                          
+                        <h5 class="feed-ver-title"><a target="_blank" href="[!--titleurl--]" _hover-ignore="1">[!--title--]</a></h5>
+                        <!-- 标题END-->
+
+                        <!-- 优惠价格-->
+                        <div class="z-highlight z-ellipsis">[!--price--]</div>
+                        <!-- 优惠价格END-->
+
+                        <div class="feed-ver-row">
+
+                        
+                            <!-- 发布时间-->
+                                     <div class="feed-ver-row-r feed-ver-date">[!--newstime--]</div><?=$tjr?>
+                            <!-- 发布时间END-->
+                        </div>
+
+                        <!-- 简介-->
+                        <div class="feed-ver-descripe" _hover-ignore="1">
+                            [!--smalltext--]...          
+                             </div>
+                        <!-- 简介 END-->
+
+                        <div class="feed-ver-row">
+                            <div class="feed-ver-row-l">
+                                <span class="z-group-data">
+
+                                    <!-- 评分-->
+                                    
+                                    <a href="javascript:void(0);" onclick="Digg(\'good\',[!--classid--],[!--id--])" class="J_zhi_like_fav" id="good[!--id--]"> <span class="scoreTotal"><b>公</b>
+                                     <i class="goodnum" xxid="[!--id--]" classid="[!--classid--]">0</i></span>
+                                     <span class="scoredInfo">已打分</span>
+                                      <span class="scoreAnimate">+1</span>
+                                    </a>
+                                     
+                                    <!-- 评分END-->
+                                </span>
+
+                                <!-- 评论CHECK-->
+                                <a href="[!--titleurl--]#comments"  target="_blank" class="z-group-data" title="评论"><em class="icon-comment"><!--[if lt IE 8]>评论<![endif]--></em><i class="plnum" xxid="[!--id--]" classid="[!--classid--]">0</i></a>
+ 
+                                <!-- 评论END-->
+                            </div>
+                            
+                            <div class="feed-ver-row-r">
+                                <div class="feed-link-btn ">
+
+                                    <!-- 直达链接-->
+                                    <div class="feed-link-btn-inner">                                                            
+                                        <a class="z-btn z-btn-red" href="/URL/[!--zhurl--]" target="_blank"  _hover-ignore="1">直达链接</a>
+                                                                                                                    </div>
+                                    <!-- 直达链接END-->
+
+                                </div>
+                            </div>
+                                                    </div>
+                    </div>
+</li>';
