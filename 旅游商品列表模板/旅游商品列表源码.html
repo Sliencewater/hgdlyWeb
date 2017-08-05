@@ -1,86 +1,100 @@
 <!doctype html>
 <html>
+
 <head>
-<meta charset="utf-8" />
-<title>旅游商品_<?=$public_r[sitename]?></title>
-<meta name="keywords" content=" [!--pagekey--] " />
-<meta name="description" content=" [!--pagedes--]" />
-[!--temp.cssjs--]
+    <meta charset="utf-8" />
+    <title>旅游商品_
+        <?=$public_r[sitename]?>
+    </title>
+    <meta name="keywords" content=" [!--pagekey--] " />
+    <meta name="description" content=" [!--pagedes--]" />
+    <link rel="stylesheet" href="/52img/css/lysp.css" type="text/css"> [!--temp.cssjs--]
 </head>
+
 <body>
-<header> 
-  [!--temp.topnav--]
-  [!--temp.header--]
-</header>
-<!--header end--><!-- section -->
-<section class="wrap"> 
-  <!-- leftWrap-->
-  <div class="leftWrap"> 
-    <!-- banner -->
-    <div class="oversea_banner">
-      <div class="slider uneven banner_nopage">
-[e:loop={'selfinfo',8,1,1}]
-<div> <a href="<?=$bqsr[titleurl]?>" target="_blank" class="picBox"> <img src="<?=$bqr[titlepic]?>" alt="<?=$bqr[title]?>"  width="170px" height="170px" style="margin-top:0px" /> </a>
-          <h2> <a href="<?=$bqsr[titleurl]?>" target="_blank" class="sliderTitle"> <?=$bqr[title]?> <span class="red"><?=$bqr[price]?></span> </a> </h2>
+    <header>
+        [!--temp.topnav--] [!--temp.header--]
+    </header>
+    <!--header end-->
+    <!-- section -->
+    <section class="wrap">
+        <!-- leftWrap-->
+        <div class="leftWrap">
+            <!-- banner -->
+            <div class="oversea_banner">
+                <div class="slider uneven banner_nopage">
+                    [e:loop={'selfinfo',8,1,1}]
+                    <div> <a href="<?=$bqsr[titleurl]?>" target="_blank" class="picBox"> <img src="<?=$bqr[titlepic]?>" alt="<?=$bqr[title]?>"  width="170px" height="170px" style="margin-top:0px" /> </a>
+                        <h2>
+                            <a href="<?=$bqsr[titleurl]?>" target="_blank" class="sliderTitle">
+                                <?=$bqr[title]?> <span class="red"><?=$bqr[price]?></span> </a>
+                        </h2>
+                    </div>
+                    [/e:loop]
+                </div>
+            </div>
+            <!-- banner end-->
+            <!-- screenPannel-->
+            <div class="screenPannel">
+                <!-- tab_nav-->
+                <ul class="tab_nav">
+                    <li class="tab_li current_item"><span>热门标签</span></li>
+                    <li class="tab_li "><span>分类筛选</span></li>
+                    <li class="tab_li "><span>商城筛选</span></li>
+                </ul>
+                <!-- tab_nav end-->
+                <!-- more_screen-->
+                <div class="more_screen">
+                    <div class="tab_info" style="">
+                        [e:loop={"select tagname from {$dbtbpre}enewstags where tagid>0 order by num desc limit 20",20,24,0}]
+                        <a href="/e/tags/index.php?tagname=<?=$bqr[tagname]?>">
+                            <?=$bqr[tagname]?>
+                        </a>
+                        [/e:loop]
+                    </div>
+                    <div class="tab_info" style="">
+                        <!-- tab_info-->
+                        [showclasstemp]'selfinfo',1,0,0[/showclasstemp]
+                        <!-- tab_info end-->
+                    </div>
+                    <div class="tab_info" style="">
+                        [e:loop={212,20,0,0}]
+                        <a href="/e/action/ListInfo.php?classid=<?=$GLOBALS['navclassid']?>&ph=1&mall=<?=$bqr[title]?>">
+                            <?=$bqr[title]?>
+                        </a>
+                        [/e:loop]
+                        <!-- tab_info end-->
+                    </div>
+                </div>
+                <!-- more_screen end-->
+            </div>
+            <!-- screenPannel end-->
+
+            <div>
+            </div>
+            <!-- list -->
+            <ul class="feed-list-col">
+                [!--empirenews.listtemp--]
+                <!--list.var1-->
+                [!--empirenews.listtemp--]
+
+            </ul>
+            <!-- list end -->
+
+            <ul class="pagination">
+                [!--show.listpage--]
+            </ul>
         </div>
-[/e:loop]
-      </div>
-    </div>
-    <!-- banner end--> 
-    <!-- screenPannel-->
-    <div class="screenPannel"> 
-      <!-- tab_nav-->
-      <ul class="tab_nav">
-        <li class="tab_li current_item"><span>热门标签</span></li>
-        <li class="tab_li "><span>分类筛选</span></li>
-        <li class="tab_li "><span>商城筛选</span></li>
-      </ul>
-      <!-- tab_nav end--> 
-      <!-- more_screen-->
-      <div class="more_screen">
-        <div class="tab_info"style=""> 
-[e:loop={"select tagname from {$dbtbpre}enewstags where tagid>0 order by num desc limit 20",20,24,0}]
-<a href="/e/tags/index.php?tagname=<?=$bqr[tagname]?>"><?=$bqr[tagname]?></a>
-[/e:loop]
+        <!-- leftWrap end-->
+
+        <div class="clear"></div>
+        <div class="g_g">
         </div>
-        <div class="tab_info" style=""> 
-          <!-- tab_info--> 
-[showclasstemp]'selfinfo',1,0,0[/showclasstemp] 
-          <!-- tab_info end-->
-        </div>
-        <div class="tab_info" style=""> 
-[e:loop={212,20,0,0}]
-<a href="/e/action/ListInfo.php?classid=<?=$GLOBALS['navclassid']?>&ph=1&mall=<?=$bqr[title]?>"><?=$bqr[title]?></a>
-[/e:loop]
-          <!-- tab_info end--> 
-         </div>
-      </div>
-      <!-- more_screen end--> 
-    </div>
-    <!-- screenPannel end-->
-    
-    <div> 
-    </div>
-    <!-- list -->
-[!--empirenews.listtemp--]
-<!--list.var1-->
-[!--empirenews.listtemp--] 
+    </section>
 
-    <!-- list end --> 
+    <!-- section end -->
 
-    <ul class="pagination">
-    [!--show.listpage--]
-    </ul>
-  </div>
-  <!-- leftWrap end--> 
-  
-  <div class="clear"></div>
-  <div class="g_g"> 
-  </div>
-</section>
-
-<!-- section end -->
-
-[!--temp.footer--]
+    [!--temp.footer--]
 </body>
+
 </html>
